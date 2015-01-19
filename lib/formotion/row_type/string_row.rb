@@ -103,7 +103,7 @@ module Formotion
           end
         else
           field.should_return? do |text_field|
-            if row.next_row && row.next_row.text_field
+            if row.next_row && row.next_row.text_field && row.next_row.text_field != :layoutSubviews
               row.next_row.text_field.becomeFirstResponder
             else
               text_field.resignFirstResponder
